@@ -1,0 +1,27 @@
+- name: Install software
+  hosts: localhost 
+  become: false 
+  gather_facts: False
+  tasks:
+    - name: Ensures packages are present via homebrew
+      community.general.homebrew:
+        name: "{{ item }}"
+        path: "/Applications"
+        state: present
+      with_items:
+        - docker
+        - docker-buildx
+        - docker-compose
+        - gifski
+        - jq
+        - kubectx
+        - pipenv
+        - task
+        - yq
+    - name: Install core packages via brew casks
+      community.general.homebrew_cask:
+        name: "{{ item }}"
+      ignore_errors: yes
+      with_items:
+        - kubecontext
+        - visual-studio-code
