@@ -16,6 +16,7 @@
         - jq
         - kubectx
         - pipenv
+        - speedtest-cli
         - task
         - yq
     - name: Install core packages via brew casks
