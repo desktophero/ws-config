@@ -6,7 +6,10 @@
         name: "{{ item }}"
       become: false
       with_items:
+        - devtoys
+        - maccy
         - multipass
+        - rectangle
         - visual-studio-code
         - vlc
     - name: install homebrew taps
@@ -28,6 +31,7 @@
         - docker-compose
         - docker-buildx
         - dockle
+        - fig
         - gh
         - gifski
         - git
@@ -39,7 +43,6 @@
         - k3d
         - kubectl
         - kubectx
-        - kumactl
         - nvm
         - python3
         - pipenv
