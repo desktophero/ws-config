@@ -1,28 +1,52 @@
-- name: Install software
-  hosts: localhost 
-  become: false 
-  gather_facts: False
+---
+- hosts: localhost
   tasks:
-    - name: Ensures packages are present via homebrew
-      community.general.homebrew:
-        name: "{{ item }}"
-        path: "/Applications"
-        state: present
-      with_items:
-        - docker
-        - docker-buildx
-        - docker-compose
-        - gifski
-        - jq
-        - kubectx
-        - pipenv
-        - speedtest-cli
-        - task
-        - yq
-    - name: Install core packages via brew casks
+    - name: install homebrew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
-      ignore_errors: yes
+      become: false
       with_items:
-        - kubecontext
+        - multipass
         - visual-studio-code
+        - vlc
+    - name: install homebrew taps
+      community.general.homebrew_tap:
+        name: "{{ item }}"
+      become: false
+      with_items:
+        - atombender/ktail
+    - name: install homebrew packages
+      community.general.homebrew:
+        name: "{{ item }}"
+      become: false
+      with_items:
+        - azure-cli
+        - bandit
+        - colima
+        - cmake
+        - docker
+        - docker-compose
+        - docker-buildx
+        - dockle
+        - gh
+        - gifski
+        - git
+        - git-town
+        - gpg
+        - helm
+        - hugo
+        - jq
+        - k3d
+        - kubectl
+        - kubectx
+        - kumactl
+        - nvm
+        - python3
+        - pipenv
+        - shellcheck
+        - speedtest-cli        
+        - task
+        - trivy
+        - vim
+        - yarn
+        - yq
