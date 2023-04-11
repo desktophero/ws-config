@@ -7,6 +7,7 @@
       become: false
       with_items:
         - devtoys
+        - fig
         - maccy
         - multipass
         - rectangle
@@ -30,8 +31,8 @@
         - docker
         - docker-compose
         - docker-buildx
+        - docker-credential-helper
         - dockle
-        - fig
         - gh
         - gifski
         - git
@@ -39,6 +40,7 @@
         - gpg
         - helm
         - hugo
+        - java
         - jq
         - k3d
         - kubectl
