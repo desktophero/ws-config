@@ -46,6 +46,7 @@
         - kubectl
         - kubectx
         - nvm
+        - openjdk@20
         - python3
         - pipenv
         - shellcheck
@@ -55,3 +56,8 @@
         - vim
         - yarn
         - yq
+    - name: setup symlink for openjdk
+      file:
+        src: /opt/homebrew/opt/openjdk/libexec/openjdk.jdk
+        dest: /Library/Java/JavaVirtualMachines/openjdk.jdk
+        state: link
