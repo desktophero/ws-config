@@ -1,6 +1,10 @@
 ---
 - hosts: localhost
   tasks:
+    - name: update brew itself
+      community.general.homebrew:
+        update_homebrew: true
+        upgrade_all: true
     - name: install homebrew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
@@ -24,6 +28,7 @@
         name: "{{ item }}"
       become: false
       with_items:
+        - act
         - azure-cli
         - bandit
         - colima
@@ -45,6 +50,7 @@
         - k3d
         - kubectl
         - kubectx
+        - maven
         - nvm
         - openjdk@20
         - python3
