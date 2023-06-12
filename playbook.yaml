@@ -12,6 +12,9 @@
       with_items:
         - devtoys
         - fig
+        - google-chrome
+        - insomnia
+        - iterm2
         - maccy
         - multipass
         - rectangle
@@ -29,6 +32,7 @@
       become: false
       with_items:
         - act
+        - atombender/ktail/ktail
         - azure-cli
         - bandit
         - colima
@@ -37,7 +41,7 @@
         - docker-compose
         - docker-buildx
         - docker-credential-helper
-        - dockle
+        - goodwithtech/r/dockle
         - gh
         - gifski
         - git
@@ -67,3 +71,14 @@
         src: /opt/homebrew/opt/openjdk/libexec/openjdk.jdk
         dest: /Library/Java/JavaVirtualMachines/openjdk.jdk
         state: link
+  roles: 
+    - role: gantsign.visual-studio-code-extensions
+      users:
+        - username: desktophero
+          visual_studio_code_extensions:
+            - timonwong.shellcheck
+            - github.vscode-github-actions
+            - me-dutour-mathieu.vscode-github-actions
+            - vscodevim.vim
+            - sldobri.bunker
+            - shd101wyy.markdown-preview-enhanced
