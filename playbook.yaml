@@ -68,6 +68,7 @@
         - shellcheck
         - speedtest-cli        
         - task
+        - tfenv
         - trivy
         - vim
         - yarn
