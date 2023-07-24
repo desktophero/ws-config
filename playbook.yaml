@@ -24,6 +24,7 @@
         - maccy
         - multipass
         - rectangle
+        - powershell
         - visual-studio-code
         - vlc
     - name: install homebrew taps
