@@ -5,15 +5,13 @@
       community.general.homebrew:
         update_homebrew: true
         upgrade_all: true
-    - name: set Java folder permissions
-      ansible.builtin.file:
-        path: /Library/Java/JavaVirtualMachines
-        owner: desktophero
-        group: wheel
-        mode: '0755'
+    - name: set java folder permissions
+      ansible.builtin.command: chown desktophero /Library/Java/JavaVirtualMachines
     - name: install homebrew casks
       community.general.homebrew_cask:
         name: "{{ item }}"
+        state: installed
+        accept_external_apps: true
       become: false
       with_items:
         - devtoys
